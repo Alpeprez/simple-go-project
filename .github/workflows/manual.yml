@@ -1,0 +1,9 @@
+name: Manual workflow
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Send greeting
+      run: echo "Hola mundo"
