@@ -11,8 +11,8 @@ jobs:
           id: operadores
           run: echo "${{ 2 > 1 }}"
         - name: Inspeccionar github
-          id: GithubContext
-          run: echo "${{ toJson(github)}}"
+          id: githubContext
+          run: echo "${{ toJSON(github) }}"
         - name: Evento y actor
           id: eventoActor
           run: |
@@ -23,5 +23,3 @@ jobs:
           run: |
             echo "${{ toJson(steps) }}"
             echo "${{ join(steps.*.conclusion) }}"
-
-
