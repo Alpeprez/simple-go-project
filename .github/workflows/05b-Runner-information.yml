@@ -1,0 +1,13 @@
+name: 05b - Runner information
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+jobs:
+  runner-information:
+    runs-on: ubuntu-latest
+    steps:
+        - name: os-info
+          run: echo "${{ runner.os }}"
+        - name: arch-info
+          run: echo "${{ runner.arch }}""
