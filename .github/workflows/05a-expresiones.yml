@@ -12,7 +12,7 @@ jobs:
           run: echo "${{ 2 > 1 }}"
         - name: Inspeccionar Github
           id: githubContext
-          run: echo "${{ toJson(github.action) }}"
+          run: echo "${{ toJSON(github) }}"
         - name: Evento y Actor
           id: eventoActor
           run: |
