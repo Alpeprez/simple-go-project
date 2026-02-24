@@ -16,7 +16,7 @@ jobs:
         - name: Evento y Actor
           id: eventoActor
           run: |
-            echo "Evento disparadpr: ${{ github.event_name }}"
+            echo "Evento disparador: ${{ github.event_name }}"
             echo "Lanzado por: ${{ github.actor }}"
         - name: Filtro de Objeto
           id: stepsContext
