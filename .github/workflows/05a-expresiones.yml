@@ -7,18 +7,18 @@ jobs:
   expresiones:
     runs-on: ubuntu-latest
     steps:
-        - name: operadores
+        - name: Operadores
           id: operadores
           run: echo "${{ 2 > 1 }}"
-        - name: Inspeccionar github
+        - name: Inspeccionar Github
           id: githubContext
           run: echo "${{ toJson(github) }}"
-        - name: Evento y actor
+        - name: Evento y Actor
           id: eventoActor
           run: |
             echo "Evento disparadpr: ${{ github.event_name }}"
             echo "Lanzado por: ${{ github.actor }}"
-        - name: Filtro de objeto
+        - name: Filtro de Objeto
           id: stepsContext
           run: |
             echo "${{ toJson(steps) }}"
