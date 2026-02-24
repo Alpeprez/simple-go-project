@@ -10,4 +10,4 @@ jobs:
         - name: os-info
           run: echo "${{ runner.os }}"
         - name: arch-info
-          run: echo "${{ runner.arch }}""
+          run: echo "${{ runner.arch }}"
