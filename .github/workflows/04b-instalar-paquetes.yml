@@ -1,0 +1,18 @@
+name: 04b - Instalar paquetes
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Install-packages:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Check node version
+      run: node -v
+    - name: Install jsonlink
+      run: sudo apt-get install jsonlint
+    - name: Check json
+      run: jsonlint-php package.json
+        
