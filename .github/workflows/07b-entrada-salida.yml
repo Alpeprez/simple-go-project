@@ -32,7 +32,9 @@ jobs:
     needs: tirada-dados
     steps:
       - name: dado 1
-        run: echo "Dado 1 = ${{ needs.tirada-dados.outputs.dado1 }}"
+        run: |
+          echo "# :game_die: El resultado es:" >> $GITHUB_STEP_SUMMARY
+          echo "Dado 1 = ${{ needs.tirada-dados.outputs.dado1 }}" >> $GITHUB_STEP_SUMMARY 
       - name: dado 2
         if:  ${{ inputs.numero-dados == 'dos' }}
-        run:  echo "Dado 2 = ${{ needs.tirada-dados.outputs.dado2 }}"
+        run:  echo "Dado 2 = ${{ needs.tirada-dados.outputs.dado2 }}" >> $GITHUB_STEP_SUMMARY
