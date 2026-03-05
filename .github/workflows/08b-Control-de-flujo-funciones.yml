@@ -35,12 +35,3 @@ jobs:
     steps:
       - name: despliegue
         run: echo "Desplegando en AWS..." 
-
-
-
-# Escribe 3 steps adicionales que se ejecuten condicionalmente. 
-# Cada paso se ejecutará condicionalmente cada uno, 
-# usando una verificación de estado diferente: 
-#     success(), failure(), always().
-
-# Da un nombre distinto a cada step para que veas claramente cuando se ejecuta cada caso.
