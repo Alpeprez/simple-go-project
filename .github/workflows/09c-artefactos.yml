@@ -17,8 +17,8 @@ jobs:
     steps:
       - name: Generar numeros de dados
         run: |
-          echo "dado1=$((1 + RANDOM % 6))" >> dato1.txt
-          echo "dado2=$((1 + RANDOM % 6))" >> dato2.txt
+          echo "Dado 1: $((1 + RANDOM % 6))" > dato1.txt
+          echo "Dado 2: $((1 + RANDOM % 6))" > dato2.txt
       - name: Subir artefactos
         uses: actions/upload-artifact@v4
         with:
@@ -37,9 +37,9 @@ jobs:
             name: dados
       - name: Imprimir dados
         run: |
-          echo "Dado 1: $(cat dado1.txt)" >> $GITHUB_STEP_SUMMARY
-          echo "Dado 2: $(cat dado2.txt)" >> $GITHUB_STEP_SUMMARY
-          
+          cat dado1.txt >> $GITHUB_STEP_SUMMARY
+          cat dado2.txt >> $GITHUB_STEP_SUMMARY
+
       
 
         
