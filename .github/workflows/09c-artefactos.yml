@@ -37,8 +37,8 @@ jobs:
             name: dados
       - name: Imprimir dados
         run: |
-          cat dado1.txt >> $GITHUB_STEP_SUMMARY
-          cat dado2.txt >> $GITHUB_STEP_SUMMARY
+          cat ${{ github.workspace }}/dados/dato1.txt >> $GITHUB_STEP_SUMMARY
+          cat ${{ github.workspace }}/dados/dato2.txt >> $GITHUB_STEP_SUMMARY
 
       
 
