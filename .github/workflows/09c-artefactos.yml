@@ -17,8 +17,8 @@ jobs:
     steps:
       - name: Generar numeros de dados
         run: |
-          echo "Dado 1: $((1 + RANDOM % 6))" > dato1.txt
-          echo "Dado 2: $((1 + RANDOM % 6))" > dato2.txt
+          echo "Dado 1: $((1 + RANDOM % 6))" >> dato1.txt
+          echo "Dado 2: $((1 + RANDOM % 6))" >> dato2.txt
       - name: Subir artefactos
         uses: actions/upload-artifact@v4
         with:
@@ -26,7 +26,6 @@ jobs:
           path: |
             dato1.txt
             dato2.txt
-  
   imprimir-dados:
     runs-on: ubuntu-latest
     needs: tirada-dados
@@ -37,8 +36,8 @@ jobs:
             name: dados
       - name: Imprimir dados
         run: |
-          cat ${{ github.workspace }}/dados/dato1.txt >> $GITHUB_STEP_SUMMARY
-          cat ${{ github.workspace }}/dados/dato2.txt >> $GITHUB_STEP_SUMMARY
+          echo "$(cat dato1.txt)" >> $GITHUB_STEP_SUMMARY
+          echo "$(cat dato2.txt)" >> $GITHUB_STEP_SUMMARY
 
       
 
